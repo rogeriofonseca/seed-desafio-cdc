@@ -9,5 +9,4 @@ class TabernabooksApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
