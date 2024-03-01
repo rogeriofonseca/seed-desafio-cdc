@@ -1,6 +1,7 @@
 package br.com.virtualbooks.tabernabooks.autor;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,9 +10,17 @@ import java.util.List;
 @RequestMapping("/autor")
 public class AutorController {
 
-    AutorController(AutorRepository autorRepository) {
+    AutorController(ProibeEmailDuplicadoAutorValidator proibeEmailDuplicadoAutorValidator, AutorRepository autorRepository) {
+        this.proibeEmailDuplicadoAutorValidator = proibeEmailDuplicadoAutorValidator;
         this.autorRepository = autorRepository;
     }
+
+    @InitBinder
+    public void init(WebDataBinder binder){
+        binder.addValidators(proibeEmailDuplicadoAutorValidator);
+    }
+
+    private ProibeEmailDuplicadoAutorValidator proibeEmailDuplicadoAutorValidator;
 
     AutorRepository autorRepository;
 
@@ -21,7 +30,6 @@ public class AutorController {
         autorRepository.save(autor);
         return autor.toString();
     }
-
 
     @GetMapping
     public List<Autor> autores() {
