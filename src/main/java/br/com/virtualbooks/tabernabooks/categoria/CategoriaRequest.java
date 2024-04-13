@@ -2,9 +2,11 @@ package br.com.virtualbooks.tabernabooks.categoria;
 
 import br.com.virtualbooks.tabernabooks.shared.UniqueValue;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class CategoriaRequest {
 
     @NotBlank
