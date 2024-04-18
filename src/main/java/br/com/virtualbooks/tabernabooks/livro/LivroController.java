@@ -3,7 +3,10 @@ package br.com.virtualbooks.tabernabooks.livro;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.validation.Valid;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/livro")
@@ -15,15 +18,19 @@ public class LivroController {
     }
 
     @PostMapping
+    @Transactional
     public String cadastrarLivro(@RequestBody @Valid NovoLivroRequest novoLivroRequest){
-        Livro livro = novoLivroRequest.mapToModel();
+        Livro livro = novoLivroRequest.mapToModel(manager);
 
+        manager.persist(livro);
         return livro.toString();
     }
 
     @GetMapping
     public String listarLivros() {
         Query query = manager.createQuery("select l FROM Livro l");
-        return query.getResultList().toString();
+        List<Livro> resultList = query.getResultList();
+
+        return resultList.toString();
     }
 }
