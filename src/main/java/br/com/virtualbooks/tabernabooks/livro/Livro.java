@@ -28,21 +28,27 @@ public class Livro {
     @Size(max = 500)
     private String resumoLivro;
     private String sumario;
-    @NotBlank
-    @Size(min = 20)
+
+    @NotNull
+    @Min(20)
     private BigDecimal preco;
-    @NotBlank
+
+    @NotNull
     @Positive
-    @Size(min = 100)
+    @Min(100)
     private Integer numeroPaginas;
+
     @NotBlank
     private String isbn;
+
     @FutureOrPresent
     private LocalDate dataPublicacao;
-    @NotBlank
+
+    @NotNull
     @OneToOne
     @PrimaryKeyJoinColumn
     private Categoria categoria;
+
     @NotNull
     @OneToOne
     @PrimaryKeyJoinColumn
