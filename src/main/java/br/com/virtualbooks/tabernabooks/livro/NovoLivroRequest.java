@@ -4,6 +4,7 @@ import br.com.virtualbooks.tabernabooks.autor.Autor;
 import br.com.virtualbooks.tabernabooks.autor.AutorRepository;
 import br.com.virtualbooks.tabernabooks.categoria.Categoria;
 import br.com.virtualbooks.tabernabooks.categoria.CategoriaRepository;
+import br.com.virtualbooks.tabernabooks.shared.ExistsId;
 import br.com.virtualbooks.tabernabooks.shared.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.EntityManager;
@@ -55,8 +56,10 @@ public class NovoLivroRequest {
     @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate dataPublicacao;
     @NotNull
+    @ExistsId(domainClass = Categoria.class, fieldName = "id")
     private Long idCategoria;
     @NotNull
+    @ExistsId(domainClass = Autor.class, fieldName = "id")
     private Long idAutor;
 
     public Livro mapToModel(EntityManager manager){
