@@ -33,7 +33,7 @@ public class ExistsIdValidator implements ConstraintValidator<ExistsId, Object> 
 
         List<?> list = query.getResultList();
 
-        Assert.state(list.isEmpty(), "Registro "+klass.getName()+" não cadastrado.");
+        Assert.state(!list.isEmpty(), "Registro "+klass.getName()+" não cadastrado.");
 
         return !list.isEmpty();
     }
