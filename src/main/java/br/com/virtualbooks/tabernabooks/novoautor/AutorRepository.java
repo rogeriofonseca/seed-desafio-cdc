@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.autor;
+package br.com.virtualbooks.tabernabooks.novoautor;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

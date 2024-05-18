@@ -1,7 +1,7 @@
-package br.com.virtualbooks.tabernabooks.livro;
+package br.com.virtualbooks.tabernabooks.cadastrolivro;
 
-import br.com.virtualbooks.tabernabooks.autor.Autor;
-import br.com.virtualbooks.tabernabooks.categoria.Categoria;
+import br.com.virtualbooks.tabernabooks.novoautor.Autor;
+import br.com.virtualbooks.tabernabooks.cadastrocategoria.Categoria;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;

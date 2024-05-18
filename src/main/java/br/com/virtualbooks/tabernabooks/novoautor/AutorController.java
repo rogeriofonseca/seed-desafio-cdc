@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.autor;
+package br.com.virtualbooks.tabernabooks.novoautor;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.WebDataBinder;
@@ -20,7 +20,7 @@ public class AutorController {
         binder.addValidators(proibeEmailDuplicadoAutorValidator);
     }
 
-    private ProibeEmailDuplicadoAutorValidator proibeEmailDuplicadoAutorValidator;
+    private final ProibeEmailDuplicadoAutorValidator proibeEmailDuplicadoAutorValidator;
 
     AutorRepository autorRepository;
 
