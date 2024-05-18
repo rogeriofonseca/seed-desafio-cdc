@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.categoria;
+package br.com.virtualbooks.tabernabooks.cadastrocategoria;
 
 import br.com.virtualbooks.tabernabooks.shared.UniqueValue;
 import jakarta.validation.constraints.NotBlank;

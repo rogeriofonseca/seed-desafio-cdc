@@ -1,9 +1,9 @@
 package br.com.virtualbooks.tabernabooks;
 
-import br.com.virtualbooks.tabernabooks.autor.AutorRepository;
-import br.com.virtualbooks.tabernabooks.autor.AutorRequest;
-import br.com.virtualbooks.tabernabooks.categoria.CategoriaRepository;
-import br.com.virtualbooks.tabernabooks.categoria.CategoriaRequest;
+import br.com.virtualbooks.tabernabooks.novoautor.AutorRepository;
+import br.com.virtualbooks.tabernabooks.novoautor.AutorRequest;
+import br.com.virtualbooks.tabernabooks.cadastrocategoria.CategoriaRepository;
+import br.com.virtualbooks.tabernabooks.cadastrocategoria.CategoriaRequest;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

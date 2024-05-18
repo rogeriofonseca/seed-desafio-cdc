@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.autor;
+package br.com.virtualbooks.tabernabooks.novoautor;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Component
 public class ProibeEmailDuplicadoAutorValidator implements Validator {
-    private AutorRepository autorRepository;
+    private final AutorRepository autorRepository;
 
     public ProibeEmailDuplicadoAutorValidator(AutorRepository autorRepository) {
         this.autorRepository = autorRepository;

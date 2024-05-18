@@ -1,9 +1,9 @@
-package br.com.virtualbooks.tabernabooks.livro;
+package br.com.virtualbooks.tabernabooks.cadastrolivro;
 
-import br.com.virtualbooks.tabernabooks.autor.Autor;
-import br.com.virtualbooks.tabernabooks.autor.AutorRepository;
-import br.com.virtualbooks.tabernabooks.categoria.Categoria;
-import br.com.virtualbooks.tabernabooks.categoria.CategoriaRepository;
+import br.com.virtualbooks.tabernabooks.novoautor.Autor;
+import br.com.virtualbooks.tabernabooks.novoautor.AutorRepository;
+import br.com.virtualbooks.tabernabooks.cadastrocategoria.Categoria;
+import br.com.virtualbooks.tabernabooks.cadastrocategoria.CategoriaRepository;
 import br.com.virtualbooks.tabernabooks.shared.ExistsId;
 import br.com.virtualbooks.tabernabooks.shared.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonFormat;

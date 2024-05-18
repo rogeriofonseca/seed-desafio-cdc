@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.categoria;
+package br.com.virtualbooks.tabernabooks.cadastrocategoria;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

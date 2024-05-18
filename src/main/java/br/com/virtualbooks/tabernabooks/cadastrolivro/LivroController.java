@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.livro;
+package br.com.virtualbooks.tabernabooks.cadastrolivro;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;

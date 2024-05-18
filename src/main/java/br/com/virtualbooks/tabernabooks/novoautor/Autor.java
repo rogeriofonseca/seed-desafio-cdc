@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.autor;
+package br.com.virtualbooks.tabernabooks.novoautor;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

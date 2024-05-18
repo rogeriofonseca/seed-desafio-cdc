@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.autor;
+package br.com.virtualbooks.tabernabooks.novoautor;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,8 +7,6 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 @Data
 public class AutorRequest {

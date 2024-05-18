@@ -1,4 +1,4 @@
-package br.com.virtualbooks.tabernabooks.categoria;
+package br.com.virtualbooks.tabernabooks.cadastrocategoria;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
