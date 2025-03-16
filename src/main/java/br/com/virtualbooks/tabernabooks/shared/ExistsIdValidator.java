@@ -1,11 +1,11 @@
 package br.com.virtualbooks.tabernabooks.shared;
 
+import br.com.virtualbooks.tabernabooks.shared.exceptions.TabernaException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import org.springframework.util.Assert;
 
 import java.util.List;
 
@@ -23,18 +23,22 @@ public class ExistsIdValidator implements ConstraintValidator<ExistsId, Object> 
     }
 
     @Override
-    public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) throws TabernaException {
         if(value == null) {
             return true;
         }
 
-        Query query = manager.createQuery("select 1 from "+klass.getName()+" where "+domainAttribute+"=:value");
+        Query query = manager.createQuery("select 1 from "+klass.getSimpleName()+" where "+domainAttribute+"=:value");
         query.setParameter("value", value);
 
         List<?> list = query.getResultList();
 
-        Assert.state(!list.isEmpty(), "Registro "+klass.getName()+" não cadastrado.");
+        if (list.isEmpty()) {
+            String userMessage = "Registro " + klass.getSimpleName() + " não cadastrado";
+            String technicalMessage = "Registro " + value + " " + klass.getName() + " não cadastrado.";
+            throw new TabernaException("-1", userMessage, technicalMessage);
+        }
 
-        return !list.isEmpty();
+        return true;
     }
 }
