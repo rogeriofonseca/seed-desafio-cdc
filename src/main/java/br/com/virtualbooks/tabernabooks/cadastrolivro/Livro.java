@@ -45,13 +45,11 @@ public class Livro {
     private LocalDate dataPublicacao;
 
     @NotNull
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @ManyToOne
     private Categoria categoria;
 
     @NotNull
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @ManyToOne
     private Autor autor;
 
     public Livro(String titulo, String resumoLivro, String sumario, BigDecimal preco, Integer numeroPaginas, String isbn, LocalDate dataPublicacao, Categoria idCategoria, Autor idAutor) {
