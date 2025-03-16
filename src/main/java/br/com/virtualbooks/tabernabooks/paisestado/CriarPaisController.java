@@ -4,10 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/pais")
@@ -25,5 +22,10 @@ public class CriarPaisController {
 
         manager.persist(pais);
         return ResponseEntity.ok().body(pais);
+    }
+
+    @GetMapping
+    public ResponseEntity<?> listarPaises() {
+        return ResponseEntity.ok().body(manager.createQuery("SELECT p FROM Pais p").getResultList());
     }
 }
